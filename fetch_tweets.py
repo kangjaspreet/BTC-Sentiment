@@ -1,8 +1,7 @@
 # import Python modules
 import pandas as pd
 import tweepy
-import time, datetime
-import csv
+import datetime
 
 # Twitter OAuth API keys
 
@@ -63,8 +62,10 @@ def get_tweets(tweet_count):
         tweets_dict['retweet_count'].append(tweet.retweet_count)
         tweets_dict['link'].append('https://twitter.com/' + tweet.user.screen_name + '/status/' + str(tweet.id))
 
-    return(tweets_dict)
+    print(tweets_dict)
 
 
 # Call function to get tweets
-get_tweets(tweet_count = 10)
+
+if __name__ == '__main__':
+    get_tweets(tweet_count=10)
